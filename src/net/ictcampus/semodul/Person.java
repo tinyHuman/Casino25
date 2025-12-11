@@ -6,6 +6,6 @@ public class Person {
     public int birthyear;
 
     public void sayName() {
-        System.out.println(name);
+        System.out.println(prename + " " + name);
     }
 }

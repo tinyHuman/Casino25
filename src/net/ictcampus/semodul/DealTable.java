@@ -6,7 +6,7 @@ public class DealTable {
     public Person player;
 
     public void showInfos() {
-        System.out.println("Das Game " + activity.name + " wird durch den Croupier " + croupier.name + " geführt");
-        System.out.println("Es spielt " + player.name);
+        System.out.println("Das Game " + activity.name + " wird durch den Croupier " + croupier.prename + " geführt");
+        System.out.println("Es spielt " + player.prename);
     }
 }
