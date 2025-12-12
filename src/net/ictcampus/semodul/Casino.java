@@ -5,29 +5,36 @@ public class Casino {
         System.out.println("Einfache Casino Simulation");
 
         Person raphael = new Person();
-        raphael.name = "Meer";
-        raphael.prename = "Raphael";
-        raphael.birthyear = 1995;
+        raphael.setName("Meer");
+        raphael.setPrename("Raphael");
+        raphael.setBirthyear(1995);
 
         Person mario = new Person();
-        mario.name = "Mund";
-        mario.prename = "Mario";
-        mario.birthyear = 1980;
+        mario.setName("Mund");
+        mario.setPrename("Mario");
+        mario.setBirthyear(1980);
+        mario.earnMoney(50);
 
         Person dani = new Person();
-        dani.name = "Mug";
-        dani.prename = "Dani";
-        dani.birthyear = 2005;
+        dani.setName("Mug");
+        dani.setPrename("Dani");
+        dani.setBirthyear(2005);
 
         Game g1 = new Game();
-        g1.name = "Zufallszahl";
+        g1.setName("Zufallszahl");
 
         DealTable dt = new DealTable();
-        dt.activity = g1;
-        dt.player = mario;
-        dt.croupier = raphael;
-
+        dt.setActivity(g1);
+        dt.setPlayer(mario);
+        dt.setCroupier(raphael);
         dt.showInfos();
+
+        for(int i = 0; i < 3; i++) {
+            dt.play();
+        }
+        System.out.println(mario.getPrename() + " hat noch " + mario.getCredit() + " Credits");
+
+
     }
 }
 
