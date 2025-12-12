@@ -18,6 +18,14 @@ public class Person {
         System.out.println(prename + " " + name);
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Person person = (Person) o;
+        return getName().equals(person.getName()) && getBirthyear() == person.getBirthyear();
+    }
+
     public void earnMoney(int amount) {
         credit += amount;
     }

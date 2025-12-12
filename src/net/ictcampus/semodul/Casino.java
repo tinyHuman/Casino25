@@ -4,27 +4,24 @@ public class Casino {
 
     public Casino() {
         System.out.println("Willkommen im ICT-Campus Casino");
+        System.out.println("Wir vergleichen Personen untereinander");
 
-        Person p1 = new Person("Parker", "Peter", 2004);
-        Person p2 = new Person("Banner", "Bruce", 1981);
-        Person p3 = new Person("Strange", "Steven", 1972);
+        Person wanda = new Person("Maximoff", "Wanda", 1989);
+        Person clint = new Person("Barton", "Clint", 1975);
+        Person pietro = new Person("Maximoff", "Pietro", 1989);
 
-        Game g1 = new Game("MegaJoker");
-        DealTable dt = new DealTable(p3, p1, g1);
-
-        p1.earnMoney(100);
-        dt.showInfos();
-        while (dt.getPlayer().getCredit() > 0) {
-            dt.play();
-            System.out.println(dt.getPlayer().getPrename() + " hat noch " +
-                    dt.getPlayer().getCredit() + " Credits zum Spielen übrig.");
-
-            if (dt.getPlayer().getCredit() > 1000) {
-                System.out.println(dt.getPlayer().getPrename() +
-                        " ist glücklich und beendet das Spielen.");
-            }
+        if (wanda.equals(clint)) {
+            System.out.println("Wanda und Clint sind die gleiche Person");
         }
-        System.out.println(dt.getPlayer().getPrename() + " ist bankrott");
+        if (pietro.equals(clint)) {
+            System.out.println("Pietro und Clint sind die gleiche Person");
+        }
+        if (wanda.equals(pietro)) {
+            System.out.println("Wanda und Pietro sind die gleiche Person");
+        }
+        if (wanda == pietro) {
+            System.out.println("Wanda und Pietro wurden jetzt noch mit einem == verglichen");
+        }
     }
 
     public static void main(String[] args) {
