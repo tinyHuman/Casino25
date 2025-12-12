@@ -6,7 +6,6 @@ public class Person {
     private String name;
     private String prename;
     private int birthyear;
-    private int credit;
 
     public Person(String name, String prename, int birthyear) {
         this.name = name;
@@ -26,21 +25,7 @@ public class Person {
         return getName().equals(person.getName()) && getBirthyear() == person.getBirthyear();
     }
 
-    public void earnMoney(int amount) {
-        credit += amount;
-    }
 
-    public int putAtStake() {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println(prename + ", gib deinen Einsatz ein: ");
-        int bet = scanner.nextInt();
-        if (bet <= credit) {
-            credit -= bet;
-            return bet;
-        } else {
-            return 0;
-        }
-    }
 
     public String getName() {
         return name;
@@ -64,9 +49,5 @@ public class Person {
 
     public void setBirthyear(int birthyear) {
         this.birthyear = birthyear;
-    }
-
-    public int getCredit() {
-        return credit;
     }
 }

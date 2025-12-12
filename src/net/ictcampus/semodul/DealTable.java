@@ -4,12 +4,12 @@ import java.util.ArrayList;
 
 public class DealTable {
     private Game activity;
-    private Person croupier;
-    private ArrayList<Person> players = new ArrayList<>();
+    private Employee croupier;
+    private ArrayList<Player> players = new ArrayList<>();
     private int pot;
     private int numberOfPlayers;
 
-    public DealTable(Person croupier, Game activity) {
+    public DealTable(Employee croupier, Game activity) {
         this.croupier = croupier;
         this.activity = activity;
     }
@@ -22,7 +22,7 @@ public class DealTable {
         }
     }
 
-    public void addPlayer(Person player) {
+    public void addPlayer(Player player) {
         if (numberOfPlayers < 10) {
             players.add(player);
             numberOfPlayers++;
@@ -32,7 +32,7 @@ public class DealTable {
     }
 
     public void play() {
-        for (Person player : players) {
+        for (Player player : players) {
             pot = player.putAtStake();
             if (activity.play()) {
                 player.earnMoney(activity.payWin(pot));
@@ -49,19 +49,19 @@ public class DealTable {
         this.activity = activity;
     }
 
-    public Person getCroupier() {
+    public Employee getCroupier() {
         return croupier;
     }
 
-    public void setCroupier(Person croupier) {
+    public void setCroupier(Employee croupier) {
         this.croupier = croupier;
     }
 
-    public ArrayList<Person> getPlayers() {
+    public ArrayList<Player> getPlayers() {
         return players;
     }
 
-    public void setPlayers(ArrayList<Person> players) {
+    public void setPlayers(ArrayList<Player> players) {
         this.players = players;
     }
 

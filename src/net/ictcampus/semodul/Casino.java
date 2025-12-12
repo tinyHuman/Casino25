@@ -6,9 +6,9 @@ public class Casino {
         System.out.println("Willkommen im ICT-Campus Casino");
 
         //Initialize persons, game and dealtable
-        Person tony = new Person("Stark", "Anthony", 1970);
-        Person wanda = new Person("Maximoff", "Wanda", 1989);
-        Person scott = new Person("Lang", "Scott", 1969);
+        Player tony = new Player("Stark", "Anthony", 1970);
+        Employee wanda = new Employee("Maximoff", "Wanda", 1989);
+        Player scott = new Player("Lang", "Scott", 1969);
 
         Game game = new Game("Zufallsraten");
         DealTable dealTable = new DealTable(wanda, game);
@@ -25,7 +25,7 @@ public class Casino {
             dealTable.play();
         }
 
-        for (Person player : dealTable.getPlayers()) {
+        for (Player player : dealTable.getPlayers()) {
             System.out.println(player.getPrename() + " hat noch " + player.getCredit() + " Credits zum Spielen übrig");
         }
     }
