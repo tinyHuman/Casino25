@@ -32,7 +32,7 @@ public class Person {
 
     public int putAtStake() {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Gib deinen Einsatz ein: ");
+        System.out.println(prename + ", gib deinen Einsatz ein: ");
         int bet = scanner.nextInt();
         if (bet <= credit) {
             credit -= bet;

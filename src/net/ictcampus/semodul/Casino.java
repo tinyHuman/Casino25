@@ -4,23 +4,29 @@ public class Casino {
 
     public Casino() {
         System.out.println("Willkommen im ICT-Campus Casino");
-        System.out.println("Wir vergleichen Personen untereinander");
 
+        //Initialize persons, game and dealtable
+        Person tony = new Person("Stark", "Anthony", 1970);
         Person wanda = new Person("Maximoff", "Wanda", 1989);
-        Person clint = new Person("Barton", "Clint", 1975);
-        Person pietro = new Person("Maximoff", "Pietro", 1989);
+        Person scott = new Person("Lang", "Scott", 1969);
 
-        if (wanda.equals(clint)) {
-            System.out.println("Wanda und Clint sind die gleiche Person");
+        Game game = new Game("Zufallsraten");
+        DealTable dealTable = new DealTable(wanda, game);
+
+        //Pay credits to the players
+        tony.earnMoney(50);
+        scott.earnMoney(50);
+
+        dealTable.addPlayer(tony);
+        dealTable.addPlayer(scott);
+
+        //Play the game
+        for (int i = 0; i < 3; i++) {
+            dealTable.play();
         }
-        if (pietro.equals(clint)) {
-            System.out.println("Pietro und Clint sind die gleiche Person");
-        }
-        if (wanda.equals(pietro)) {
-            System.out.println("Wanda und Pietro sind die gleiche Person");
-        }
-        if (wanda == pietro) {
-            System.out.println("Wanda und Pietro wurden jetzt noch mit einem == verglichen");
+
+        for (Person player : dealTable.getPlayers()) {
+            System.out.println(player.getPrename() + " hat noch " + player.getCredit() + " Credits zum Spielen übrig");
         }
     }
 
