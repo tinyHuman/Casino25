@@ -1,40 +1,34 @@
 package net.ictcampus.semodul;
 
 public class Casino {
-    public static void main(String[] args) {
-        System.out.println("Einfache Casino Simulation");
 
-        Person raphael = new Person();
-        raphael.setName("Meer");
-        raphael.setPrename("Raphael");
-        raphael.setBirthyear(1995);
+    public Casino() {
+        System.out.println("Willkommen im ICT-Campus Casino");
 
-        Person mario = new Person();
-        mario.setName("Mund");
-        mario.setPrename("Mario");
-        mario.setBirthyear(1980);
-        mario.earnMoney(50);
+        Person p1 = new Person("Parker", "Peter", 2004);
+        Person p2 = new Person("Banner", "Bruce", 1981);
+        Person p3 = new Person("Strange", "Steven", 1972);
 
-        Person dani = new Person();
-        dani.setName("Mug");
-        dani.setPrename("Dani");
-        dani.setBirthyear(2005);
+        Game g1 = new Game("MegaJoker");
+        DealTable dt = new DealTable(p3, p1, g1);
 
-        Game g1 = new Game();
-        g1.setName("Zufallszahl");
-
-        DealTable dt = new DealTable();
-        dt.setActivity(g1);
-        dt.setPlayer(mario);
-        dt.setCroupier(raphael);
+        p1.earnMoney(100);
         dt.showInfos();
-
-        for(int i = 0; i < 3; i++) {
+        while (dt.getPlayer().getCredit() > 0) {
             dt.play();
+            System.out.println(dt.getPlayer().getPrename() + " hat noch " +
+                    dt.getPlayer().getCredit() + " Credits zum Spielen übrig.");
+
+            if (dt.getPlayer().getCredit() > 1000) {
+                System.out.println(dt.getPlayer().getPrename() +
+                        " ist glücklich und beendet das Spielen.");
+            }
         }
-        System.out.println(mario.getPrename() + " hat noch " + mario.getCredit() + " Credits");
+        System.out.println(dt.getPlayer().getPrename() + " ist bankrott");
+    }
 
-
+    public static void main(String[] args) {
+        Casino casino = new Casino();
     }
 }
 

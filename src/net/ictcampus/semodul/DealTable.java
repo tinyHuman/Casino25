@@ -6,6 +6,12 @@ public class DealTable {
     private Person player;
     private int pot;
 
+    public DealTable(Person croupier, Person player, Game activity) {
+        this.croupier = croupier;
+        this.player = player;
+        this.activity = activity;
+    }
+
     public void showInfos() {
         System.out.println("Das Game " + activity.getName() + " wird durch den Croupier " + croupier.getPrename() + " geführt");
         System.out.println("Es spielt " + player.getPrename());
@@ -13,7 +19,7 @@ public class DealTable {
 
     public void play() {
         pot = player.putAtStake();
-        if(activity.play()) {
+        if (activity.play()) {
             player.earnMoney(activity.payWin(pot));
         }
         pot = 0;

@@ -8,6 +8,12 @@ public class Person {
     private int birthyear;
     private int credit;
 
+    public Person(String name, String prename, int birthyear) {
+        this.name = name;
+        this.prename = prename;
+        this.birthyear = birthyear;
+    }
+
     public void sayName() {
         System.out.println(prename + " " + name);
     }
@@ -20,7 +26,7 @@ public class Person {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Gib deinen Einsatz ein: ");
         int bet = scanner.nextInt();
-        if(bet <= credit){
+        if (bet <= credit) {
             credit -= bet;
             return bet;
         } else {

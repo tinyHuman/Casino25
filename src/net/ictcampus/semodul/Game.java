@@ -6,6 +6,10 @@ import java.util.Scanner;
 public class Game {
     private String name;
 
+    public Game(String name) {
+        this.name = name;
+    }
+
     public boolean play() {
         Random random = new Random();
         int number = random.nextInt(10) + 1;
@@ -14,7 +18,7 @@ public class Game {
         System.out.println("Gib eine Zahl zwischen 1 - 10 ein: ");
         int guess = scanner.nextInt();
 
-        if(guess > 10 || guess < 0) {
+        if (guess > 10 || guess < 0) {
             System.out.println("Verloren...die Zahl liegt ausserhalb der Range");
             return false;
         } else if ((guess - number) < 2 && (guess - number) > -2) {
