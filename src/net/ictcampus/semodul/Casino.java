@@ -10,8 +10,10 @@ public class Casino {
         Employee wanda = new Employee("Maximoff", "Wanda", 1989);
         Player scott = new Player("Lang", "Scott", 1969);
 
-        Game game = new Game("Zufallsraten");
-        DealTable dealTable = new DealTable(wanda, game);
+        Game game1 = new RandomGuess("Zufallsraten");
+        Game game2 = new LuckySeven("Lucky Seven");
+
+        DealTable dealTable = new DealTable(wanda, game2);
 
         //Pay credits to the players
         tony.earnMoney(50);
@@ -20,10 +22,10 @@ public class Casino {
         dealTable.addPlayer(tony);
         dealTable.addPlayer(scott);
 
-        //Play the game
-        for (int i = 0; i < 3; i++) {
+        //Play the game 3 times
+        //for (int i = 0; i < 3; i++) {
             dealTable.play();
-        }
+        //}
 
         for (Player player : dealTable.getPlayers()) {
             System.out.println(player.getPrename() + " hat noch " + player.getCredit() + " Credits zum Spielen übrig");
