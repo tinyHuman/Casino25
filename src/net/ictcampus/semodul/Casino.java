@@ -13,7 +13,7 @@ public class Casino {
         Game game1 = new RandomGuess("Zufallsraten");
         Game game2 = new LuckySeven("Lucky Seven");
 
-        DealTable dealTable = new DealTable(wanda, game2);
+        DealTable dealTable = new DealTable(wanda, game1);
 
         //Pay credits to the players
         tony.earnMoney(50);
